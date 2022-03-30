@@ -1,0 +1,29 @@
+<h1 class=" display-1 text-info my-3 text-center"> Create user </h1>
+<div class="container col-md-6">
+    <div class="card bg-dark text-light">
+        <div class="card-body">
+            <div class="form-group">
+                <label >User Name</label>
+                <input type="text" [(ngModel)]="userObject.name"
+                required #userName="ngModel"
+                class="form-control mb-2"
+                placeholder="Enter User Name" >
+                <label >Phone</label>
+                <input type="text"  [(ngModel)]="userObject.phone"
+                required #userPhone="ngModel"
+                class="form-control mb-2"
+                placeholder="Enter User Phone" >
+                <label >User Iamge</label>
+                <input type="url" [(ngModel)]="userObject.imgUrl"
+                required #userImg="ngModel"
+                class="form-control mb-2" 
+                placeholder="Enter Image" >
+                <button (click)="send(userName, userPhone, userImg)" class="btn btn-info btn-block w-50 mx-auto mt-3">Send Data</button>
+            </div>
+        </div>
+        <div class="alert alert-danger " *ngIf="!(userName.valid&&userPhone.valid&&userImg.valid)">
+            {{invalid}}
+        </div>
+        
+    </div>
+</div>

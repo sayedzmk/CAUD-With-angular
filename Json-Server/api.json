@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "name": "sayed Mohamed ",
+      "phone": "022332555",
+      "imgUrl": "https://scontent.fcai1-2.fna.fbcdn.net/v/t1.6435-9/86796290_2622253494674547_5685880965772083200_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=174925&_nc_eui2=AeGaJ8EKTpldVjYla90FqoSiDJ_7Y5GciwoMn_tjkZyLCqV16hjvbfRJH1xTRTVe4hdkc4EuxesU0o3Fc_bqto6n&_nc_ohc=LNH589IO934AX_aAtHT&_nc_ht=scontent.fcai1-2.fna&oh=00_AT_RAUfXD1KX69Zx4FyDoJYbGAH56km0j1_Vl_q8Ekzr1w&oe=625B33DE",
+      "id": 1
+    },
+    {
+      "name": "Shrefe mohamed",
+      "phone": "222665483",
+      "imgUrl": "https://scontent.fcai1-2.fna.fbcdn.net/v/t39.30808-6/273034707_3065153820400853_6631979690764777141_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=e3f864&_nc_eui2=AeE4Ro8o4ciZfCiiDjdzUfPrFOGqkzRLfO0U4aqTNEt87bv1yg_-0c7ZhfAuaFDw8JjGWmxziOKHk8R9nXMhvInO&_nc_ohc=zKAenWPXVdMAX-X4Cuy&_nc_ht=scontent.fcai1-2.fna&oh=00_AT86juPvoR9Tv8JNglFrycE54CFZgTOImhbGc0CTJmtkLg&oe=62382659",
+      "id": 2
+    }
+  ],
+  "employee": [
+    {
+      "firstName": "sayed",
+      "lastName": "mohamed",
+      "email": "sayed@moahmed",
+      "mobile": "123445678",
+      "salary": "8,500",
+      "id": 1
+    },
+    {
+      "firstName": "xxxxxxxxx",
+      "lastName": "xxxxxxxx",
+      "email": "xxxxxxxxxx",
+      "mobile": "xxxxxxxxx",
+      "salary": "xxxxxxxxxx",
+      "id": 2
+    }
+  ]
+}

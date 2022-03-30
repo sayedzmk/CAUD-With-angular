@@ -1,0 +1,12 @@
+@media (max-width:450px) {
+    h1{
+        font-size: 90px;
+    }
+    
+}
+@media (max-width:450px) {
+    .table th .btn{
+        margin-top: 8px;
+    }
+    
+}

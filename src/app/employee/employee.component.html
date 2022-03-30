@@ -1,0 +1,189 @@
+<nav class="navbar navbar-light bg-info">
+    <div class="container-fluid">
+        <h1 class="display-5 text-light">Employee</h1>
+        <div class="d-flex">
+            <button class="btn btn-success" type="button" data-toggle="modal" data-target="#exampleModal"> Add
+                Employee</button>
+        </div>
+    </div>
+</nav>
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile NO </th>
+            <th scope="col">Salary</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allData">
+            <td>{{data.id}}</td>
+            <td>{{data.firstName}}</td>
+            <td>{{data.lastName}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.salary}}</td>
+            <td>
+                <a routerLink="/em/{{data.id}}"class="btn btn-info " type="button" data-toggle="modal" data-target="#Modal" >
+                    Eidt 
+                </a>
+                <button class="btn btn-danger mx-2" (click)="remov(data.id)">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label >FristName</label>
+                    <input type="text"   
+                    class="form-control" 
+                    placeholder="Enter the firstName" 
+                    aria-describedby="helpId"
+                    required
+                    #firstName="ngModel"
+                    [(ngModel)]="employeeObj.firstName">
+                </div>
+                <div class="form-group">
+                    <label >LastName</label>
+                    <input type="text"   
+                    class="form-control" 
+                    placeholder="Enter the lasttName" 
+                    aria-describedby="helpId"
+                    required
+                    #lastName="ngModel"
+                    [(ngModel)]="employeeObj.lastName">
+                </div>
+                <div class="form-group">
+                    <label >Email</label>
+                    <input type="email"   
+                    class="form-control" 
+                    placeholder="Enter the Email" 
+                    aria-describedby="helpId"
+                    required
+                    #email="ngModel"
+                    [(ngModel)]="employeeObj.email">
+                </div>
+                <div class="form-group">
+                    <label >Mobile No</label>
+                    <input type="text"   
+                    class="form-control" 
+                    placeholder="Enterthe Mobile" 
+                    aria-describedby="helpId"
+                    required
+                    #mobile="ngModel"
+                    [(ngModel)]="employeeObj.mobile">
+                </div>
+                <div class="form-group">
+                    <label >Salary</label>
+                    <input type="text"   
+                    class="form-control" 
+                    placeholder="Enter the Salary" 
+                    aria-describedby="helpId"
+                    required
+                    #salary="ngModel"
+                    [(ngModel)]="employeeObj.salary">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" 
+                (click)="send(firstName, lastName, email,mobile,salary)" >Add</button>
+            </div>
+            <div class="alert alert-danger " *ngIf="!(firstName.valid&&lastName.valid&&email.valid&&mobile.valid&&salary.valid)">
+                {{invalid}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label >FristName</label>
+                    <input type="text"   
+                    class="form-control" 
+                    placeholder="Enter the firstName" 
+                    aria-describedby="helpId"
+                    required
+                    #firstName="ngModel"
+                    [(ngModel)]="editempObj.firstName">
+                </div>
+                <div class="form-group">
+                    <label >LastName</label>
+                    <input type="text"   
+                    class="form-control" 
+                    placeholder="Enter the lasttName" 
+                    aria-describedby="helpId"
+                    required
+                    #lastName="ngModel"
+                    [(ngModel)]="editempObj.lastName">
+                </div>
+                <div class="form-group">
+                    <label >Email</label>
+                    <input type="email"   
+                    class="form-control" 
+                    placeholder="Enter the Email" 
+                    aria-describedby="helpId"
+                    required
+                    #email="ngModel"
+                    [(ngModel)]="editempObj.email">
+                </div>
+                <div class="form-group">
+                    <label >Mobile No</label>
+                    <input type="text"   
+                    class="form-control" 
+                    placeholder="Enterthe Mobile" 
+                    aria-describedby="helpId"
+                    required
+                    #mobile="ngModel"
+                    [(ngModel)]="editempObj.mobile">
+                </div>
+                <div class="form-group">
+                    <label >Salary</label>
+                    <input type="text"   
+                    class="form-control" 
+                    placeholder="Enter the Salary" 
+                    aria-describedby="helpId"
+                    required
+                    #salary="ngModel"
+                    [(ngModel)]="editempObj.salary">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" 
+                (click)="eidt(firstName, lastName, email,mobile,salary)">Update</button>
+            </div>
+            <div class="alert alert-danger " *ngIf="!(firstName.valid&&lastName.valid&&email.valid&&mobile.valid&&salary.valid)">
+                {{invalid}}
+            </div>
+        </div>
+    </div>
+</div> 
